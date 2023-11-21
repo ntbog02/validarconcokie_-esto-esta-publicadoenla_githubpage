@@ -3,7 +3,7 @@ var registroId = localStorage.getItem("registroId");
 
 if (registroId) {
   // Obtener los datos del registro desde la API
-  var registroUrl = "https://apiusuario-8c363-default-rtdb.firebaseio.com/registro/" + registroId + ".json";
+  var registroUrl = "https://api02proyect-default-rtdb.firebaseio.com/registro/" + registroId + ".json";
   fetch(registroUrl)
     .then(function(response) {
       return response.json();
@@ -32,8 +32,10 @@ function mostrarDatosPerfil(perfil) {
   var perfilContainer = document.getElementById("perfilContainer");
 
   var ul = document.createElement("ul");
+  ul.classList.add("card");
   for (var key in perfil) {
     var li = document.createElement("li");
+    li.classList.add("align-items-center");
     li.textContent = key + ": " + perfil[key];
     ul.appendChild(li);
   }

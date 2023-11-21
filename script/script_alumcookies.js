@@ -3,23 +3,23 @@ var registroId = localStorage.getItem("registroId");
 
 if (registroId) {
   // Obtener los datos del registro desde la API
-  var registroUrl = "https://apiusuario-8c363-default-rtdb.firebaseio.com/registro/" + registroId + ".json";
+  var registroUrl = "https://api02proyect-default-rtdb.firebaseio.com/registro/" + registroId + ".json";
   fetch(registroUrl)
     .then(function(response) {
       return response.json();
     })
     .then(function(data) {
       // Obtener el nombre y apellido del registro
-      var nombreApellido = data.nombreyapellido;
+      var nombreyapellido = data.nombreyapellido;
 
       // Mostrar el mensaje de bienvenida
-      document.getElementById("bienvenido").textContent = "Bienvenido " + nombreApellido;
+      document.getElementById("bienvenido").textContent = "Bienvenido " + nombreyapellido;
 
       // Obtener el curso del registro
       var curso = data.curso;
 
       // Obtener los datos del curso desde la API
-      var cursosUrl = "https://cursos-76617-default-rtdb.firebaseio.com/cursos.json";
+      var cursosUrl = "https://api02proyect-default-rtdb.firebaseio.com/registro.json";
       fetch(cursosUrl)
         .then(function(response) {
           return response.json();
@@ -27,7 +27,7 @@ if (registroId) {
         .then(function(cursosData) {
           // Buscar el curso que coincida con el nombre del curso del registro
           for (var key in cursosData) {
-            if (cursosData.hasOwnProperty(key) && cursosData[key].nombrecurso === curso) {
+            if (cursosData.hasOwnProperty(key) && cursosData[key].nombredelcurso === curso) {
               var cursoEncontrado = cursosData[key];
               // Mostrar los datos del curso
               mostrarDatosCurso(cursoEncontrado);
@@ -51,7 +51,7 @@ function mostrarDatosCurso(curso) {
   var cursoContainer = document.createElement("div");
   cursoContainer.innerHTML = `
     <h2>${curso.nombrecurso}</h2>
-    <img src="${curso.imagen}" alt="${curso.nombrecurso}">
+    <img src="${curso.imagen}" alt="${curso.nombredelcurso}">
     <p><strong>Presentación:</strong> ${curso.presentacion}</p>
     <p><strong>Objetivo General:</strong> ${curso.objetivogeneral}</p>
   `;

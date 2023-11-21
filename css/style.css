@@ -1,0 +1,54 @@
+/* Estilos básicos */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: rgba(235, 233, 233, 0.842)
+  }
+
+  /* ESTILOS FORM */
+  .form_contenido{
+    background-color: #7052ff;
+    width: 50%;
+    height: 30%;
+  } form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  label,
+  input {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="submit"] {
+    margin-top: 10px;
+  }
+  
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+
+  /* ESTILOS LOGO */
+  .contenido_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+  }
+
+  .form_login{
+    background-color: #7052ff;
+    width: 50%;
+    height: 30%;
+  }
+
+  .perfil_container{
+    background-color: #7052ff;
+  }

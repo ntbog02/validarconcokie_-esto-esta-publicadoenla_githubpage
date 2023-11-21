@@ -3,7 +3,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     var dniInput = document.getElementById("dni").value;
     var contraseniaInput = document.getElementById("contrasenia").value;
-    var url = "https://apiusuario-8c363-default-rtdb.firebaseio.com/registro.json";
+    var url = "https://api02proyect-default-rtdb.firebaseio.com/registro.json";
 
     // Realizar la petición GET a la API para obtener los registros
     fetch(url)

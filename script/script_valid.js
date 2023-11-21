@@ -2,7 +2,7 @@ document.getElementById("registroForm").addEventListener("submit", function(even
     event.preventDefault(); // Evitar que se envíe el formulario automáticamente
 
     var dniInput = document.getElementById("dni").value;
-    var url = "https://apiusuario-8c363-default-rtdb.firebaseio.com/registro.json";
+    var url = "https://api02proyect-default-rtdb.firebaseio.com/registro.json";
 
     // Realizar la petición GET a la API para verificar el DNI
     fetch(url)
@@ -26,19 +26,19 @@ document.getElementById("registroForm").addEventListener("submit", function(even
         } else {
           // Habilitar el formulario de carga de datos
           document.getElementById("registroForm").innerHTML = `
-            <label for="nombreyapellido">Nombre y Apellido:</label>
-            <input type="text" id="nombreyapellido" required>
-            <label for="mail">Email:</label>
-            <input type="email" id="mail" required>
-            <label for="curso">Curso:</label>
-            <select id="curso" required>
+            <label for="nombreyapellido" class="col-form-label">Nombre y Apellido:</label>
+            <input type="text" id="nombreyapellido" class="form-control" required>
+            <label for="mail" class="col-form-label">Email:</label>
+            <input type="email" id="mail" class="form-control" required>
+            <label for="curso" class="col-form-label">Curso:</label>
+            <select id="curso" class="form-control" required>
               <option value="Front End Developer">Front End Developer</option>
               <option value="Back End Developer">Back End Developer</option>
               <option value="Python 3">Python 3</option>
             </select>
-            <label for="contrasenia">Contraseña:</label>
-            <input type="password" id="contrasenia" required>
-            <input type="submit" value="Registrar">
+            <label for="contrasenia" class="col-form-label">Contraseña:</label>
+            <input type="password" id="contrasenia" class="form-control" required>
+            <input type="submit" class="btn btn-primary" value="Registrar">
           `;
 
           // Agregar el evento de envío del formulario de registro
@@ -72,6 +72,9 @@ document.getElementById("registroForm").addEventListener("submit", function(even
             });
           });
         }
+
+
+        
       })
       .catch(function(error) {
         alert("Ha ocurrido un error. Por favor, intenta nuevamente.");
